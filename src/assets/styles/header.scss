@@ -24,3 +24,14 @@
     color: white;
   }
 }
+.create-post{
+  padding: 10px 20px;
+  background-color: palegoldenrod;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid palegoldenrod;
+  &:hover{
+    background-color: transparent;
+    color: black;
+  }
+}
