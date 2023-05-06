@@ -2,7 +2,6 @@
 export default {
     name: "Header"
 }
-import '../assets/styles/header.scss'
 </script>
 
 <template>
@@ -16,5 +15,43 @@ import '../assets/styles/header.scss'
 
 
 <style scoped>
+.container {
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.wrapper {
+    background-color: mediumpurple;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+
+
+}
+
+.logo:hover {
+    color: white;
+}
+
+.create-post {
+    padding: 10px 20px;
+    background-color: palegoldenrod;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 2px solid palegoldenrod;
+
+
+}
+
+.create-post:hover {
+    background-color: transparent;
+    color: black;
+}
 </style>
