@@ -1,4 +1,6 @@
 <script>
+import axios from "axios";
+
 export default {
     name: "CreatePost",
     data() {
@@ -14,9 +16,17 @@ export default {
         inputText(event) {
             this.text = event.target.value
         },
-        clearFields(){
+        clearFields() {
             this.title = ''
             this.text = ''
+        },
+        addArticle() {
+            axios.post('http://localhost:3000/api/article', {
+                title: this.title,
+                text: this.text
+            }).then(res => res.status === 200 ? console.log(this.$data) : null).catch(err => console.log(err))
+            this.clearFields()
+            this.$router.push('/')
         }
     }
 
@@ -43,10 +53,9 @@ export default {
                     v-bind:value="text"
                     @input="inputText"
             />
-            <p>{{ text }}</p>
         </div>
         <div class="text-buttons">
-            <button class="add-post text-button">Добавить статью</button>
+            <button class="add-post text-button" @click="addArticle">Добавить статью</button>
             <button class="clear-post text-button" @click="clearFields">Очистить</button>
         </div>
     </div>

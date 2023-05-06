@@ -14,7 +14,7 @@ export default {
 </template>
 
 
-<style scoped>
+<style scoped lang="scss">
 .container {
     width: 1400px;
     margin: 0 auto;
