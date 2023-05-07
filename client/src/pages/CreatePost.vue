@@ -6,7 +6,8 @@ export default {
     data() {
         return {
             text: "",
-            title: ''
+            title: '',
+            length: 0,
         }
     },
     methods: {
@@ -28,7 +29,12 @@ export default {
             this.clearFields()
             this.$router.push('/')
         }
-    }
+    },
+    computed:{
+        getLength() {
+             return this.length = this.text.length
+        }
+    },
 
 }
 </script>
@@ -53,6 +59,7 @@ export default {
                     v-bind:value="text"
                     @input="inputText"
             />
+            <p class="length">{{getLength}}/3500</p>
         </div>
         <div class="text-buttons">
             <button class="add-post text-button" @click="addArticle">Добавить статью</button>
@@ -71,7 +78,8 @@ export default {
 .text-container {
     display: flex;
     flex-direction: column;
-    gap: 20px 0;
+    /*gap: 20px 0;*/
+    position: relative;
 }
 
 .text-input {
@@ -82,8 +90,13 @@ export default {
 .text {
     height: 400px;
     resize: none;
+    &:focus{
+        height: 400px;
+    }
 }
-
+.title{
+    margin-bottom: 20px;
+}
 .text-buttons {
     margin-top: 20px;
     display: flex;
@@ -103,5 +116,12 @@ export default {
 
 .add-post {
     background-color: greenyellow;
+}
+.length{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+    color: gray;
 }
 </style>

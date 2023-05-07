@@ -17,7 +17,7 @@ export default {
             articles: []
         }
     },
-    mounted() {
+    beforeMount() {
         axios.get("http://localhost:3000/api/articles").then(response => this.articles = response.data).catch(err => {
             console.log(err)
         })
@@ -42,8 +42,3 @@ export default {
 }
 </style>
 
-<!--articlesList(){-->
-<!--return this.articles.map(el => {-->
-<!--return <ArticlesItem :title/>-->
-<!--})-->
-<!--}-->
