@@ -1,14 +1,17 @@
 <template>
-    <div class="container">
-        <div class="secondary-info">
-            <h2 class="title">{{ article.title }}</h2>
-            <p class="id">{{ article.id }}</p>
+    <a :href="'/article/' + this.article.id">
+        <div class="container" >
+            <div class="secondary-info">
+                <h2 class="title">{{ article.title }}</h2>
+                <p class="id">{{ article.id }}</p>
+            </div>
+            <div class="text-container">
+                <p class="text">{{ article.text }}</p>
+            </div>
+            <img src="https://www.svgrepo.com/show/513794/trash-1.svg" alt="trash" class="trash-svg"
+                 @click="deleteArticle">
         </div>
-        <div class="text-container">
-            <p class="text">{{ article.text }}</p>
-        </div>
-        <img src="https://www.svgrepo.com/show/513794/trash-1.svg" alt="trash" class="trash-svg" @click="deleteArticle">
-    </div>
+    </a>
 </template>
 
 <script>
@@ -26,6 +29,9 @@ export default {
         deleteArticle() {
             axios.delete(`http://localhost:3000/api/${this.article.id}`)
             location.reload()
+        },
+        openArticle(article) {
+
         }
     }
 }
@@ -38,6 +44,8 @@ export default {
   border-radius: 10px;
   position: relative;
   word-wrap: break-word;
+  cursor: pointer;
+  color: black;
 }
 
 .secondary-info {

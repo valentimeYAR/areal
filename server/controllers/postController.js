@@ -11,6 +11,9 @@ class PostModel{
         return res.json(post.data)
     }
     async getById(req, res){
+        const {id} = req.params
+        const article = await Post.findByPk(id)
+        return res.json(article)
 
     }
     async delete(req, res){
@@ -20,7 +23,12 @@ class PostModel{
         return res.json(deleteArticle)
     }
     async update(req, res){
-
+        const {id} = req.params
+        const {title, text} = req.body
+        const post = await Post.findOne({where: {id}})
+        post.title = title
+        post.text = text
+        await post.save()
     }
 }
 

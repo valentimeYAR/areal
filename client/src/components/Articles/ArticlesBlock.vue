@@ -31,6 +31,9 @@ export default {
   width: 1400px;
   margin: 0 auto;
   margin-top: 20px;
+    display: flex;
+    gap: 20px 0;
+    flex-direction: column;
 }
 
 .title {
