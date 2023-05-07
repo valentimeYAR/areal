@@ -10,7 +10,7 @@ const Post = sequelize.define('post', {
 })
 
 const Comment = sequelize.define('comment', {
-    id: {type: DataTypes.INTEGER, primaryKey: true},
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, unique:true},
     text: {type: DataTypes.STRING},
     forPost: {type: DataTypes.INTEGER},
     createdAt: {type: DataTypes.DATE},

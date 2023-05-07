@@ -1,7 +1,7 @@
 <script setup>
 
 import './app.scss'
-import Header from "./components/Header.vue";
+import Header from "./components/Header/Header.vue";
 </script>
 
 <template>

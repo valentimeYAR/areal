@@ -1,10 +1,11 @@
 const Router = require('express')
 const router = new Router()
 const postController = require('../controllers/postController')
+commentController = require('../controllers/commentController')
 
 // Comments
-router.post('/article/#ID#/comment/')
-router.get('/article/#ID#/comments/')
+router.post('/article/:id/comment/', commentController.addComment) // +
+router.get('/article/:id/comments/', commentController.getComments)
 router.path('/article/#ID#/comment/#COMMENT_ID#/')
 router.delete('/article/#ID#/comment/#COMMENT_ID#/')
 
