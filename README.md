@@ -5,14 +5,14 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Project Setup
 
 ```sh
-cd client -> nom i
+cd client -> npm i
 cd .. -> cd server -> npm i
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-cd client -> nom run dev
+cd client -> npm run dev
 cd .. -> cd server -> npm run star
 ```
 
