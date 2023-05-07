@@ -28,14 +28,16 @@ export default {
             }).then(res => res.status === 200 ? console.log(this.$data) : null).catch(err => console.log(err))
             this.clearFields()
             this.$router.push('/')
-        }
+        },
     },
-    computed:{
+    computed: {
         getLength() {
-             return this.length = this.text.length
-        }
-    },
-
+            return this.length = this.text.length
+        },
+        lengthClass() {
+            return this.getLength === 3000 ? 'length red' : 'length'
+        },
+    }
 }
 </script>
 
@@ -44,8 +46,7 @@ export default {
         <div class="text-container">
             <input
                     type="text"
-                    class="title
-                    text-input"
+                    class="title text-input"
                     placeholder="Заголовок статьи"
                     name="title" maxlength="50"
                     v-bind:value="title"
@@ -55,14 +56,14 @@ export default {
                     class="text text-input"
                     placeholder="Основной текст статьи"
                     name="text"
-                    maxlength="3500"
+                    maxlength="3000"
                     v-bind:value="text"
                     @input="inputText"
             />
-            <p class="length">{{getLength}}/3500</p>
+            <p :class="lengthClass">{{ getLength }}/3000</p>
         </div>
         <div class="text-buttons">
-            <button class="add-post text-button" @click="addArticle">Добавить статью</button>
+            <button class="add-post text-button" @click="addArticle" :disabled="getLength < 50">Добавить статью</button>
             <button class="clear-post text-button" @click="clearFields">Очистить</button>
         </div>
     </div>
@@ -78,7 +79,6 @@ export default {
 .text-container {
     display: flex;
     flex-direction: column;
-    /*gap: 20px 0;*/
     position: relative;
 }
 
@@ -88,15 +88,18 @@ export default {
 }
 
 .text {
-    height: 400px;
+    height: 450px;
     resize: none;
-    &:focus{
+
+    &:focus {
         height: 400px;
     }
 }
-.title{
+
+.title {
     margin-bottom: 20px;
 }
+
 .text-buttons {
     margin-top: 20px;
     display: flex;
@@ -117,7 +120,8 @@ export default {
 .add-post {
     background-color: greenyellow;
 }
-.length{
+
+.length {
     position: absolute;
     bottom: 20px;
     right: 20px;
