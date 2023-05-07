@@ -3,6 +3,7 @@
         <div class="content">
             <h2 class="title">{{ article.title }}</h2>
             <p class="date">{{ getDate }}</p>
+            <p class="date" v-if="article.editedAt !== 0">Дата изменения: {{ getEditDate }}</p>
             <p class="text">{{ article.text }}</p>
             <div class="control-block">
                 <a :href="'/article/edit/' + this.article.id">
@@ -29,7 +30,7 @@
                     />
                 </div>
                 <div class="comments-list" v-if="comments.length > 0">
-                        <CommentItem v-for="comment in comments" :key="comment.id" :comment="comment"/>
+                        <CommentItem v-for="comment in comments" :key="comment.id" :comment="comment" :id="article.id"/>
                 </div>
             </div>
         </div>
@@ -65,6 +66,15 @@ export default {
             const day = date.getDate().toString().padStart(2, '0');
             return `${day}.${month}.${year}`
         },
+        getEditDate() {
+            console.log(this.article.editedAt)
+            const date = new Date(this.article.editedAt)
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const day = date.getDate().toString().padStart(2, '0');
+            return `${day}.${month}.${year}`
+        },
+
     },
     methods: {
         deleteArticle() {

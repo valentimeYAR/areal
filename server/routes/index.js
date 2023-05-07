@@ -5,9 +5,9 @@ commentController = require('../controllers/commentController')
 
 // Comments
 router.post('/article/:id/comment/', commentController.addComment) // +
-router.get('/article/:id/comments/', commentController.getComments)
-router.path('/article/#ID#/comment/#COMMENT_ID#/')
-router.delete('/article/#ID#/comment/#COMMENT_ID#/')
+router.get('/article/:id/comments/', commentController.getComments) // +
+router.put('/article/:id/comment/:comment/', commentController.updateComment) // +
+router.delete('/article/:id/comment/:comment/', commentController.deleteComment) // +
 
 // Articles
 router.post('/article', postController.create) // +

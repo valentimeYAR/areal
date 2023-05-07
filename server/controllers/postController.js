@@ -26,9 +26,11 @@ class PostModel{
         const {id} = req.params
         const {title, text} = req.body
         const post = await Post.findOne({where: {id}})
+        post.editedAt = new Date()
         post.title = title
         post.text = text
         await post.save()
+        res.json(post)
     }
 }
 
