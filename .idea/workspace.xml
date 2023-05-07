@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5d7a83dc-2b38-4a3e-bfcf-a51c922615b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Articles/Article.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Articles/Article.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Articles/CommentItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Articles/CommentItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/commentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/commentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/postController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.star" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.t.js" />
         <item itemvalue="Node.js.app.js" />
       </list>
@@ -129,7 +128,7 @@
       <workItem from="1683455409754" duration="2695000" />
       <workItem from="1683458128391" duration="14529000" />
       <workItem from="1683472989414" duration="121000" />
-      <workItem from="1683473114613" duration="10796000" />
+      <workItem from="1683473114613" duration="14927000" />
     </task>
     <servers />
   </component>

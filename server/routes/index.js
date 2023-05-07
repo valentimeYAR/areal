@@ -16,6 +16,7 @@ router.get('/articles', postController.getAll) // +
 router.put('/article/:id', postController.update) // +
 router.delete('/:id', postController.delete) // +
 
-
+// GroupBy
+router.get("/analytic/comments/", commentController.getByDate)
 
 module.exports = router

@@ -8,7 +8,10 @@ export default {
     <div class="wrapper">
         <div class="container">
             <router-link class="logo" to="/">AREAL</router-link>
-            <router-link class="create-post" to="/create-post">Добавить статью</router-link>
+            <div class="right">
+                <router-link class="create-post" to="/create-post">Добавить статью</router-link>
+                <router-link to="/groupBy/" class="create-post">Найти комментарии по дате</router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -46,10 +49,15 @@ export default {
     font-size: 15px;
     border-radius: 10px;
     border: 2px solid palegoldenrod;
+    color: black
 
 
 }
-
+.right{
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
 .create-post:hover {
     background-color: transparent;
     color: black;
